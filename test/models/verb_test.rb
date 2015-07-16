@@ -6,11 +6,12 @@ class VerbTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @verb = Verb.new(first: "amo", second: "amare", third: "amavi", fourth: "amatus")
+    @verb = Verb.new(first: "example", second: "amare", third: "amavi", fourth: "amatus")
   end
 
-  test "should be valid" do
-    assert @verb.valid?
+  test "verb should be valid" do
+    @verb.first = "unique"
+    assert @verb.valid?, "verb.first: #{@verb.first}"
   end
 
   test "first should be present" do
@@ -23,13 +24,67 @@ class VerbTest < ActiveSupport::TestCase
     assert_not @verb.valid?
   end
 
-    test "third should be present" do
+  test "third should be present" do
     @verb.third = "   "
     assert_not @verb.valid?
-    end
-      test "fourth should be present" do
+  end
+  test "fourth should be present" do
     @verb.fourth = "   "
     assert_not @verb.valid?
-      end
-      
+  end
+
+  test "first should be less than 50 letters" do
+    @verb.first = "a" * 51
+    assert_not @verb.valid?
+  end
+
+  test "second should be less than 50 letters" do
+    @verb.second = "a" * 51
+    assert_not @verb.valid?
+  end
+
+  test "third should be less than 50 letters" do
+    @verb.third = "a" * 51
+    assert_not @verb.valid?
+  end
+
+  test "fourth should be less than 50 letters" do
+    @verb.fourth = "a" * 51
+    assert_not @verb.valid?
+  end
+
+  test "first should be unique" do
+    Verb.find_by(first: @verb.first).destroy
+    duplicate_verb = @verb.dup
+    @verb.save
+    assert_not duplicate_verb.valid?
+  end
+
+  test "first should be downcase" do
+    @verb.first = "TEST"
+    @verb.save
+    assert @verb.first == "test"
+  end
+
+  test "second should be downcase" do
+    Verb.find_by(first: @verb.first).destroy
+    @verb.second = "TEST"
+    @verb.save
+    assert @verb.second == "test"
+  end
+
+  test "third should be downcase" do
+    Verb.find_by(first: @verb.first).destroy
+    @verb.third = "TEST"
+    @verb.save
+    assert @verb.third == "test"
+  end
+
+  test "fourth should be downcase" do
+    Verb.find_by(first: @verb.first).destroy
+    @verb.fourth = "TEST"
+    @verb.save
+    assert @verb.fourth == "test"
+  end
+  
 end

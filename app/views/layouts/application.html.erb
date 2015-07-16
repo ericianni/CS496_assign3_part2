@@ -8,16 +8,28 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-	<li><%= link_to "Home", home_path %></li>
-	<li><%= link_to "New", new_path %></li>
-	<li><%= link_to "API", '#' %></li>
-      </ul>
+    <nav class="navbar navbar-default">
+      <div class="cointainer-fluid">
+	<div class="navbar-header">
+	  <%= link_to "Latin Verbs", home_path, { class: 'navbar-brand' } %>
+	</div>
+	<ul class="nav navbar-nav">
+	  <li><%= link_to "Home", home_path %></li>
+	  <li><%= link_to "All", all_path %></li>
+	  <li><%= link_to "New", new_path %></li>
+	  <li><%= link_to "API", '#' %></li>
+	</ul>
+	<ul class="nav navbar-nav " style="float: right">
+	  <li>
+	    <%= link_to "Back", 'javascript:history.go(-1);' %>
+	  </li>
+	</ul>
+      </div>
     </nav>
-  </header>
-
-<%= yield %>
+</header>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

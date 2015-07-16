@@ -1,10 +1,16 @@
 class Verb
   include Mongoid::Document
 
-  validates :first, presence: true
-  validates :second, presence: true
-  validates :third, presence: true
-  validates :fourth, presence: true
+  before_save {self.first = first.downcase }
+  before_save {self.second = second.downcase }
+  before_save {self.third = third.downcase }
+  before_save {self.fourth = fourth.downcase }
+  
+  
+  validates :first, presence: true, length: { maximum: 50 }, uniqueness: true
+  validates :second, presence: true, length: { maximum: 50 }
+  validates :third, presence: true, length: { maximum: 50 }
+  validates :fourth, presence: true, length: { maximum: 50 }
 
   field :first, type: String
   field :second, type: String

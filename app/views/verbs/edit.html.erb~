@@ -1,0 +1,8 @@
+<h1>Edit Verb</h1>
+<%= form_for(@verb) do |f| %>
+<%= f.text_field :first, placeholder: @verb.first %>
+<%= f.text_field :second, placeholder: @verb.second %>
+<%= f.text_field :third, placeholder: @verb.third %>
+<%= f.text_field :fourth, placeholder: @verb.fourth %>
+<%= f.submit "Edit Verb" %>
+<% end %>

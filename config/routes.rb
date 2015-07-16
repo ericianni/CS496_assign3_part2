@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   get 'new' => 'verbs#new'
 
-  get 'show' => 'verbs#show'
-
   get 'home' => 'verbs#home'
+
+  get 'all' => 'verbs#all'
+
+  get 'edit' => 'verb#edit'
 
   root 'verbs#home'
   

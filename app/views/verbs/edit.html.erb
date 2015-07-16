@@ -1,5 +1,5 @@
-<h1>Add New Verb</h1>
-<h3>Inpupt Verb's Principle Parts</h3>
+<h1>Edit Verb</h1>
+<h3>Modify Verb's Principle Parts</h3>
 <div class="row">
   <div class="col-md-4 ">
     <%= form_for(@verb, html:  { role: "form" }) do |f| %>
@@ -20,7 +20,7 @@
       <%= f.label :fourth %>
       <%= f.text_field :fourth, placeholder: "Fourth", class: "form-control" %>
     </div>
-    <%= f.submit "Add Verb", class: "btn btn-default" %>
+    <%= f.submit "Edit Verb", class: "btn btn-default" %>
     <% end %>
   </div>
 </div>

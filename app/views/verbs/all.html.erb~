@@ -1,0 +1,8 @@
+<table>
+  <% @verb.each do |v| %>
+  <td><%= v.first %></td>
+  <td><%= link_to "Details", '#' %></td>
+  <td><%= link_to "Edit", edit_verb_path(v) %></td>
+  <td><%= link_to "Delete", v, method: :delete %></td>
+  <% end %>
+</table>
