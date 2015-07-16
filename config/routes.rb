@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'new' => 'verbs#new'
+
+  get 'show' => 'verbs#show'
+
+  get 'home' => 'verbs#home'
+
+  root 'verbs#home'
+  
   resources :verbs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
