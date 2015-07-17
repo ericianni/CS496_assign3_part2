@@ -99,12 +99,12 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
-#<% if ENV['MONGOHQ_URL'] %>
-  production:
-     sessions:
-        default:
-           uri: <%= ENV['MONGOHQ_URL'] %>
-        options:
-	   skip_version_check: true
-           safe: true
-#<% end %>
+
+production:
+  sessions:
+    default:
+      #uri: <%= ENV['MONGOHQ_URL'] %>
+      uri: mongodb://heroku_21qgvpw3:dp8ooihme53k4kg92m22c5qc98@ds047632.mongolab.com:47632/heroku_21qgvpw3
+      options:
+        skip_version_check: true
+        safe: true
