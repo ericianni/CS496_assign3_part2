@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/welcome'
+
+  get 'static_pages/api'
+
   get 'new' => 'verbs#new'
 
   get 'home' => 'verbs#home'
@@ -8,7 +12,9 @@ Rails.application.routes.draw do
 
   get 'edit' => 'verb#edit'
 
-  root 'verbs#home'
+  get 'api' => 'static_pages#api'
+  
+  root 'static_pages#welcome'
   
   resources :verbs do
     resources :tenses

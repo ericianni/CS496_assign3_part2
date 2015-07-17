@@ -2,12 +2,12 @@ class Api::VerbsController < ApplicationController
 
   def index
     @verb = Verb.all
-    render json: @verb
+    #render json: @verb
   end
 
   def show
     @verb = Verb.find(params[:id])
-    respond_with @verb
+    #render json: @verb
   end
 
   def create
@@ -36,12 +36,7 @@ class Api::VerbsController < ApplicationController
       render text: "There was a problem updating the database"
     end
   end
-
-  def show
-    @verb = Verb.find(params[:id])
-    render json: @verb
-  end
-  
+ 
   def verb_params
     params.permit(:first, :second, :third, :fourth)
   end

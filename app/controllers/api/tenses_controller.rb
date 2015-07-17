@@ -3,13 +3,13 @@ class Api::TensesController < ApplicationController
   def index
     @verb = Verb.find(params[:verb_id])
     @tense = @verb.tenses.all
-    render json: @tense
+#    render json: @tense
   end
 
   def show
     @verb = Verb.find(params[:verb_id])
     @tense = @verb.tenses.find(params[:id])
-    render json: @tense
+ #   render json: @tense
   end
   
   def create
