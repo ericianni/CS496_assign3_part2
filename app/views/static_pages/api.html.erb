@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-6 blog-main">
+    <div class="blog_header">
+      <h1 class="blog-title">Latin Verbs API</h1>
+      <p>Now you can have Latin Verbs in your own applications!</p>
+    </div>
+    
+    <div class="blog-post">
+      <h2 class="blog-post-title">Getting Started</h2>
+      <p>Latin Verbs utilizes a restful API. Through a few simple API calls you will be able to access the entire Latin Verbs database. All API queries for content will receive a response in JSON format.</p>
+      <p>There are two types of content in Latin Verbs: verbs and tenses. Each type has its own format. The verbs' JSON response for verbs will have a unique id number and all four priciple parts with attributes named: id, first, second, third, fourth. Each verb will also have any number of tenses attached with the attribute of "tenses". </p>
+      <p>Tenses are the second type of content in Latin Verbs. Each tense is embedded in a verb and can't exist individually. Furthermore each tense can only belong to one and only one verb. Tenses have a name, abbreviation, voice, mood, and the parent verb's id number: name, abbrv, voice, mood, and verb_id.</p>
+      <p>Now for the actual API calls. Both verbs and tenses support GET, POST, PUT, and DELETE HTTP calls. No API key is required because Latin Verbs has great trust in its users. All API calls are appended to the end of this page's address: herokuapp.com/api.</p>
+      <h3>Verbs</h3>
+      <p>List All Verbs</p>
+      <p><code>GET /verbs</code></p>
+      <p>Create New Verb</p>
+      <p><code>POST /verbs</code> with parameters for first, second, third, fourth</p>
+      <p>Display Verb By Id</p>
+      <p><code>GET /verbs/verb_id_number</code></p>
+      <p>Update Particular Verb</p>
+      <p><code>PUT /verbs/verb_id_number</code> with parameters for first, second, third, fourth</p>
+      <p>Remove Verb By Id</p>
+      <p><code>DELETE /verbs/verb_id_number</code></p>
+      <h3>Tenses</h3>
+      <p>List Verb's Tenses</p>
+      <p><code>GET /verbs/verb_id_number/tenses/</code></p>
+      <p>Add Tense To Verb</p>
+      <p><code>POST /verbs/verb_id_number/tenses</code> with parameters for name, abbrv, voice, and mood</p>
+      <p>Display Verb Tense By Id</p>
+      <p><code>GET /verbs/verb_id_number/tenses/tense_id_number</code></p>
+      <p>Update Verb's Tense</p>
+      <p><code>PUT /verbs/verb_id_number/tenses/tense_id_number</code>with parameters for name, abbrv, voice, and mood</p>
+      <p>Remove Verb's Tense By Id</p>
+      <p><code>DELETE /verbs/verb_id_number/tenses/tense_id_number</code></p>
+    </div>
+  </div>
+</div>
