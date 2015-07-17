@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 gem 'mongoid'
 gem 'rails_12factor'
-#gem 'bson_ext'
-
+#gem 'bson_ext' <-----VERY BAD
+gem 'responders'
 gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
