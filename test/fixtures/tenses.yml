@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  abbrv: MyString
+  voice: MyString
+  mood: MyString
+  verb_id: MyString
+
+two:
+  name: MyString
+  abbrv: MyString
+  voice: MyString
+  mood: MyString
+  verb_id: MyString

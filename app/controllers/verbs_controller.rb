@@ -22,6 +22,7 @@ class VerbsController < ApplicationController
   
   def show
     @verb = Verb.find(params[:id])
+#    @tense = @verb.tenses.new
   end
 
   def new

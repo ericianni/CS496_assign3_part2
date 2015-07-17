@@ -1,0 +1,8 @@
+class Tense
+  include Mongoid::Document
+  field :name, type: String
+  field :abbrv, type: String
+  field :voice, type: String
+  field :mood, type: String
+  field :verb_id, type: String
+end

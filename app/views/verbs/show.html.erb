@@ -10,6 +10,28 @@
       <td><%= @verb.second %></td>
       <td><%= @verb.third %></td>
       <td><%= @verb.fourth %></td>
+      <td><%= link_to "Edit", edit_verb_path(@verb) %></td>
+      <td><%= link_to "Delete", @verb, method: :delete %></td>
     </tr>
+  </table>
+  <table class="table">
+    <thead>
+      <tr>
+	<% if @verb.tenses.empty? %>
+	<td>Tenses</td>
+	<% else %>
+	<td>No Tenses</td>
+	<% end %>
+	<td><%= link_to "Add Tense", new_verb_tense_path(:verb_id => @verb.id) %>
+      </tr>
+    </thead>
+    <% @verb.tenses.each do |t| %>
+    <tr>
+      <td><%= t.name %></td>
+      <td><%= t.abbrv %></td>
+      <td><%= t.voice %></td>
+      <td><%= t.mood %></td>
+    </tr>
+    <% end %>
   </table>
 </div>

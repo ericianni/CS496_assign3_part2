@@ -1,6 +1,8 @@
 class Verb
   include Mongoid::Document
 
+  embeds_many :tenses, class_name: "Tense"
+  
   before_save {self.first = first.downcase }
   before_save {self.second = second.downcase }
   before_save {self.third = third.downcase }
