@@ -1,5 +1,5 @@
 class Api::VerbsController < ApplicationController
-  respond_to :json
+
   def index
     @verb = Verb.all
     render json: @verb
