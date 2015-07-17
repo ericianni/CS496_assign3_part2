@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   resources :verbs do
     resources :tenses
   end
+
+  namespace :api do
+    resources :verbs do
+      resources :tenses
+    end
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
