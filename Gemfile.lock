@@ -47,8 +47,6 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
     bson (1.12.3)
-    bson_ext (1.12.3)
-      bson (~> 1.12.3)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -167,7 +165,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
-  bson_ext
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)

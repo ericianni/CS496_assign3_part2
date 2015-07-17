@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'mongoid'
 gem 'rails_12factor'
-gem 'bson_ext'
+#gem 'bson_ext'
 
 gem 'bootstrap-sass'
 
