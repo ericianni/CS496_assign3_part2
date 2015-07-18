@@ -16,9 +16,9 @@ class Api::TensesController < ApplicationController
     @verb = Verb.find(params[:verb_id])
     @tense = @verb.tenses.new(tense_params)
     if @tense.save
-      render text: "Successfully added"
+      render json: '{"status":"Successfully added"}'
     else
-      render text: "There was a problem adding to the database"
+      render json: '{"status":"There was a problem adding to the database"}'
     end
   end
 
@@ -26,9 +26,9 @@ class Api::TensesController < ApplicationController
     @verb = Verb.find(params[:verb_id])
     @tense = @verb.tenses.find(params[:id])
     if @tense.update_attributes(tense_params)
-      render text: "Successfully updated"
+      render json: '{"status":"Successfully updated"}'
     else
-      render text: "There was a problem updating the database"
+      render json: '{"status":"There was a problem updating the database"}'
     end
   end
 
@@ -36,9 +36,9 @@ class Api::TensesController < ApplicationController
     @verb = Verb.find(params[:verb_id])
     @tense = @verb.tenses.find(params[:id])
     if @tense.destroy(tense_params)
-      render text: "Successfully deleted"
+      render json: '{"status":"Successfully deleted"}'
     else
-      render text: "There was a problem deleting from the database"
+      render text: '{"status":"There was a problem deleting from the database"}'
     end
   end
   
